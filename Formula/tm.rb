@@ -6,7 +6,7 @@ class Tm < Formula
   homepage "https://github.com/wxnacy/tm"
   url "https://github.com/wxnacy/tm/releases/download/0.4.0/tm-v0.4.0-darwin-amd64.zip"
   sha256 "8a3fc1f9bb7ce5624fcca8875ebf423ec80bec4ee7cc4d73faa5ec89ced10b57"
-  version "0.4.0"
+  version "0.4.1"
 
   def install
     
