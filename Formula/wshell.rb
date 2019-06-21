@@ -4,8 +4,8 @@
 class Wshell < Formula
   desc "常用的自动化部署脚本"
   homepage "https://github.com/wxnacy/wshell"
-  url "https://github.com/wxnacy/wshell/archive/v1.4.8.tar.gz"
-  sha256 "a161a0dfa7ffb7217696b1d36dfab3c4adf74edc5ad780ec65309ff230cd726b"
+  url "https://github.com/wxnacy/wshell/archive/v1.5.0.tar.gz"
+  sha256 "291d646b5c32369a6ae454f9bd49fd4a7a6031cf9a348435e6301c10393da366"
 
   def install
     prefix.install Dir["*"]
