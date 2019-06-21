@@ -15,6 +15,7 @@ class Wshell < Formula
 
       export WS_HOME=$(brew --prefix wshell)
       export PATH=$PATH:$WS_HOME/bin
+      . ${WS_HOME}/conf/bash/bashrc
 
   EOS
   end
