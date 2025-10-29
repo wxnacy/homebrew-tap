@@ -5,42 +5,62 @@
 class Wgo < Formula
   desc "类 IPython 的 Golang 交互运行工具"
   homepage "https://github.com/wxnacy/wgo"
-  version "1.2.4"
+  version "1.2.5"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/wxnacy/wgo/releases/download/v1.2.4/wgo_1.2.4_darwin_amd64.tar.gz"
-      sha256 "7b8bcbe63a46b606c06781892c8310bf3ce8c571d61f72ae3e88ac3579d54c72"
+      url "https://github.com/wxnacy/wgo/releases/download/v1.2.5/wgo_1.2.5_darwin_amd64.tar.gz"
+      sha256 "a5dc8a98001f465c6ee1b080f663ebec5f72b0b21ed2e140e49f865db1880ae6"
 
       def install
         bin.install "wgo"
+        # 通过可执行文件生成 bash/zsh/fish/powershell 补全
+        generate_completions_from_executable(bin/"wgo", "completion", base_name: "wgo")
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/wxnacy/wgo/releases/download/v1.2.4/wgo_1.2.4_darwin_arm64.tar.gz"
-      sha256 "70d4b07193ec59858ab9f472dadb808d1e6522d617ab47c373f9c19b31c2370f"
+      url "https://github.com/wxnacy/wgo/releases/download/v1.2.5/wgo_1.2.5_darwin_arm64.tar.gz"
+      sha256 "35c20071a0f4fbd9944bf26bd7020d99f1750b5e670ae5ba1293fc14f280441f"
 
       def install
         bin.install "wgo"
+        # 通过可执行文件生成 bash/zsh/fish/powershell 补全
+        generate_completions_from_executable(bin/"wgo", "completion", base_name: "wgo")
       end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/wxnacy/wgo/releases/download/v1.2.4/wgo_1.2.4_linux_amd64.tar.gz"
-      sha256 "e9d44864b74adaad80855a504a5753d961c2b459080e9e8691be7a3633ced607"
+      url "https://github.com/wxnacy/wgo/releases/download/v1.2.5/wgo_1.2.5_linux_amd64.tar.gz"
+      sha256 "9e12288f4b87acd8349786ce4c329092a956a2719013dd609126ff1b1d571707"
       def install
         bin.install "wgo"
+        # 通过可执行文件生成 bash/zsh/fish/powershell 补全
+        generate_completions_from_executable(bin/"wgo", "completion", base_name: "wgo")
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/wxnacy/wgo/releases/download/v1.2.4/wgo_1.2.4_linux_arm64.tar.gz"
-      sha256 "6887d19a0fb1a460d992457a55da0c83f00421901ef8bfd066db0b102cbb6894"
+      url "https://github.com/wxnacy/wgo/releases/download/v1.2.5/wgo_1.2.5_linux_arm64.tar.gz"
+      sha256 "0ad675690cb1a26546d9a084fbd47da17bc97b68db1d8040a5439bb23886260d"
       def install
         bin.install "wgo"
+        # 通过可执行文件生成 bash/zsh/fish/powershell 补全
+        generate_completions_from_executable(bin/"wgo", "completion", base_name: "wgo")
       end
     end
+  end
+
+  def caveats
+    <<~EOS
+      代码补全依赖 gopls：
+        brew install gopls
+        或
+        go install golang.org/x/tools/gopls@latest
+
+      自动导入/格式化依赖 goimports：
+        go install golang.org/x/tools/cmd/goimports@latest
+    EOS
   end
 end
