@@ -5,13 +5,13 @@
 class Wgo < Formula
   desc "类 IPython 的 Golang 交互运行工具"
   homepage "https://github.com/wxnacy/wgo"
-  version "1.2.6"
+  version "1.2.7"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/wxnacy/wgo/releases/download/v1.2.6/wgo_1.2.6_darwin_amd64.tar.gz"
-      sha256 "446d84186e78bcc0353a1d999273f9283c92efe095a600f1dd1a70896e4d5eb2"
+      url "https://github.com/wxnacy/wgo/releases/download/v1.2.7/wgo_1.2.7_darwin_amd64.tar.gz"
+      sha256 "8a4c9c0f54152e0b17a60d901aa5786f3b7f276104cc27ed4996cdfce5358c4a"
 
       def install
         bin.install "wgo"
@@ -20,8 +20,8 @@ class Wgo < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/wxnacy/wgo/releases/download/v1.2.6/wgo_1.2.6_darwin_arm64.tar.gz"
-      sha256 "cee7d749aeb7aae892868ca29d5d18c95ef4a58bc56d0a40656df08de95967b1"
+      url "https://github.com/wxnacy/wgo/releases/download/v1.2.7/wgo_1.2.7_darwin_arm64.tar.gz"
+      sha256 "f0969e6fe7c7bee8a40a2e6133b69ef2501cc90cc193969cc920816509cd9e2a"
 
       def install
         bin.install "wgo"
@@ -33,8 +33,8 @@ class Wgo < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/wxnacy/wgo/releases/download/v1.2.6/wgo_1.2.6_linux_amd64.tar.gz"
-      sha256 "a81517cfd5703b38b1e7e823065d9b77b38e884772ec8146383392b89ce6e249"
+      url "https://github.com/wxnacy/wgo/releases/download/v1.2.7/wgo_1.2.7_linux_amd64.tar.gz"
+      sha256 "19611f7107ff1dc49482e061eb2d0d7e9afa214f02ed7fde5f7fdeb1b699bf74"
       def install
         bin.install "wgo"
         # 通过可执行文件生成 bash/zsh/fish/powershell 补全
@@ -42,8 +42,8 @@ class Wgo < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/wxnacy/wgo/releases/download/v1.2.6/wgo_1.2.6_linux_arm64.tar.gz"
-      sha256 "7239eb64ef1db602f5f735bf3736ce2704017523b6ae4fd9fd97f14ea89848ad"
+      url "https://github.com/wxnacy/wgo/releases/download/v1.2.7/wgo_1.2.7_linux_arm64.tar.gz"
+      sha256 "859a842c3c853bd4a184b700a0c0367ca13f0001f5e39717e660fc823fb7d29c"
       def install
         bin.install "wgo"
         # 通过可执行文件生成 bash/zsh/fish/powershell 补全
