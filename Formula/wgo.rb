@@ -5,13 +5,13 @@
 class Wgo < Formula
   desc "类 IPython 的 Golang 交互运行工具"
   homepage "https://github.com/wxnacy/wgo"
-  version "1.2.7"
+  version "1.2.8"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/wxnacy/wgo/releases/download/v1.2.7/wgo_1.2.7_darwin_amd64.tar.gz"
-      sha256 "8a4c9c0f54152e0b17a60d901aa5786f3b7f276104cc27ed4996cdfce5358c4a"
+      url "https://github.com/wxnacy/wgo/releases/download/v1.2.8/wgo_1.2.8_darwin_amd64.tar.gz"
+      sha256 "902af5fcf43275490d7f793e30247cf616b1c9fd930645a54dcb93c69a059bfc"
 
       def install
         bin.install "wgo"
@@ -20,8 +20,8 @@ class Wgo < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/wxnacy/wgo/releases/download/v1.2.7/wgo_1.2.7_darwin_arm64.tar.gz"
-      sha256 "f0969e6fe7c7bee8a40a2e6133b69ef2501cc90cc193969cc920816509cd9e2a"
+      url "https://github.com/wxnacy/wgo/releases/download/v1.2.8/wgo_1.2.8_darwin_arm64.tar.gz"
+      sha256 "9f5e28836cb4e2205a57cc17b98afb4d8680116aa101409ac9bd0aedcebd79ef"
 
       def install
         bin.install "wgo"
@@ -33,8 +33,8 @@ class Wgo < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/wxnacy/wgo/releases/download/v1.2.7/wgo_1.2.7_linux_amd64.tar.gz"
-      sha256 "19611f7107ff1dc49482e061eb2d0d7e9afa214f02ed7fde5f7fdeb1b699bf74"
+      url "https://github.com/wxnacy/wgo/releases/download/v1.2.8/wgo_1.2.8_linux_amd64.tar.gz"
+      sha256 "018b4f7e6806eebfea4a7f4cbf1e7f71b545c75537442ccbe41d832e5ce51433"
       def install
         bin.install "wgo"
         # 通过可执行文件生成 bash/zsh/fish/powershell 补全
@@ -42,8 +42,8 @@ class Wgo < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/wxnacy/wgo/releases/download/v1.2.7/wgo_1.2.7_linux_arm64.tar.gz"
-      sha256 "859a842c3c853bd4a184b700a0c0367ca13f0001f5e39717e660fc823fb7d29c"
+      url "https://github.com/wxnacy/wgo/releases/download/v1.2.8/wgo_1.2.8_linux_arm64.tar.gz"
+      sha256 "b52e8f31357f168827f5594a61b679331eaa3f26df1f734d222135c3294d0aca"
       def install
         bin.install "wgo"
         # 通过可执行文件生成 bash/zsh/fish/powershell 补全
@@ -58,9 +58,6 @@ class Wgo < Formula
         brew install gopls
         或
         go install golang.org/x/tools/gopls@latest
-
-      自动导入/格式化依赖 goimports：
-        go install golang.org/x/tools/cmd/goimports@latest
     EOS
   end
 end
