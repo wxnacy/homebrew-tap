@@ -5,13 +5,13 @@
 class Bdpan < Formula
   desc "百度网盘命令行工具"
   homepage "https://github.com/wxnacy/bdpan-cli"
-  version "0.0.3"
+  version "0.0.4"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/wxnacy/bdpan-cli/releases/download/v0.0.3/bdpan_0.0.3_darwin_amd64.tar.gz"
-      sha256 "100950f51ef06567621f0e428ee1bbdbc96c584a4cc49902129aac33d6fb57af"
+      url "https://github.com/wxnacy/bdpan-cli/releases/download/v0.0.4/bdpan_0.0.4_darwin_amd64.tar.gz"
+      sha256 "e960e82f58cbe66f2f05efbad297ab2472be6c7b14a72dc36adeb08a1a0fa5da"
 
       def install
         bin.install "bdpan"
@@ -19,8 +19,8 @@ class Bdpan < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/wxnacy/bdpan-cli/releases/download/v0.0.3/bdpan_0.0.3_darwin_arm64.tar.gz"
-      sha256 "0a3f5428a1bb1a96dfbdba6cd0ba87fe06b12f9e788886bd0ad2ca9ef126e323"
+      url "https://github.com/wxnacy/bdpan-cli/releases/download/v0.0.4/bdpan_0.0.4_darwin_arm64.tar.gz"
+      sha256 "95b2d5fcd61764c06c464d7692576242cbf0dcf7c9853c7668051ebb095dc759"
 
       def install
         bin.install "bdpan"
@@ -31,16 +31,16 @@ class Bdpan < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/wxnacy/bdpan-cli/releases/download/v0.0.3/bdpan_0.0.3_linux_amd64.tar.gz"
-      sha256 "cf2fbff63da862139ac47525217d6e70cce7daf0daf465a964e5ac25b5f4dbd5"
+      url "https://github.com/wxnacy/bdpan-cli/releases/download/v0.0.4/bdpan_0.0.4_linux_amd64.tar.gz"
+      sha256 "3b102b0f40915f54dd1137d937cd6eeef2787ac02bd7d39a8831efeff68c30c6"
       def install
         bin.install "bdpan"
         generate_completions_from_executable(bin/"bdpan", "completion", base_name: "bdpan")
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/wxnacy/bdpan-cli/releases/download/v0.0.3/bdpan_0.0.3_linux_arm64.tar.gz"
-      sha256 "edcaf7b7d46cd1dcf1f358e2a3182815e00277461dd64c61699b5c1ed1fc0d02"
+      url "https://github.com/wxnacy/bdpan-cli/releases/download/v0.0.4/bdpan_0.0.4_linux_arm64.tar.gz"
+      sha256 "35b42f83faa570857ee0487f5cb4bce1079aeb5ebd3f9fbd7f50bca3f73ae7d3"
       def install
         bin.install "bdpan"
         generate_completions_from_executable(bin/"bdpan", "completion", base_name: "bdpan")
